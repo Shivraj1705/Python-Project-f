@@ -50,7 +50,8 @@ with tab3:
         preds = predict_next_month()
     if preds:
         pred_df = pd.DataFrame(list(preds.items()), columns=["Category", "Predicted (₹)"])
-     st.dataframe(pred_df.style.format({"Predicted (₹)": "{:,.2f}"}))
+        # FIXED LINE BELOW
+        st.dataframe(pred_df.style.format({"Predicted (₹)": "{:,.2f}"}))
     else:
         st.warning("Need 3+ entries for predictions")
 
